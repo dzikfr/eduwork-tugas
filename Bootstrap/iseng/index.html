@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Website</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        .navbar {
+            background-color: #007bff !important;
+        }
+        .navbar-brand, .nav-link {
+            color: #fff !important;
+        }
+        section {
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        #home {
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            color: #fff;
+        }
+        #about, #portfolio, #contact {
+            background-color: #fff;
+            color: #333;
+        }
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+        }
+        .content-box {
+            max-width: 800px;
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        #about {
+            background: linear-gradient(to right, #ffffff, #d4e4ff);
+        }
+        #portfolio {
+            background: linear-gradient(to right, #d4e4ff, #ffffff);
+        }
+        #contact {
+            background: linear-gradient(to right, #ffffff, #d4e4ff);
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #004085;
+        }
+    </style>
+</head>
+<body>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">My Website</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#home">Beranda</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">Tentang Saya</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#portfolio">Portofolio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Kontak</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Sections -->
+<section id="home">
+    <div class="content-box text-white">
+        <h1>Selamat Datang di Website Saya</h1>
+        <p>Ini adalah beranda website pribadi saya. Jelajahi lebih lanjut untuk mengenal saya lebih baik!</p>
+    </div>
+</section>
+<section id="about">
+    <div class="content-box">
+        <h1>Tentang Saya</h1>
+        <p>Saya adalah seorang pengembang web dengan keahlian dalam berbagai teknologi modern.</p>
+    </div>
+</section>
+<section id="portfolio">
+    <div class="content-box">
+        <h1>Portofolio</h1>
+        <p>Berikut adalah beberapa proyek yang telah saya kerjakan.</p>
+    </div>
+</section>
+<section id="contact">
+    <div class="content-box">
+        <h1>Kontak</h1>
+        <p>Hubungi saya melalui email atau media sosial.</p>
+        <a href="mailto:email@example.com" class="btn btn-primary">Kirim Email</a>
+    </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

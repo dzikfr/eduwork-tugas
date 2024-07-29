@@ -1,0 +1,167 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    box-sizing: border-box;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #DBA39A;
+    color: #FEFCF3;
+    position: fixed;
+    width: 100%;
+}
+
+.title {
+    float: left;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.navbar-list a {
+    float: right;
+    margin-left: 20px;
+    color: #FEFCF3;
+    text-decoration: none;
+    transition: color 1s;
+}
+
+.navbar-list a:hover {
+    color: black;
+    text-decoration: underline;
+}
+
+.hero {
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 45vh;
+    background-color: #F5EBE0;
+    background-image: url('/gambar/gambar.png');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    color: black;
+    border-bottom: 5px solid #DBA39A;
+}
+
+.hero h1 {
+    font-size: 36px;
+}
+
+.hero p {
+    font-size: 18px;
+}
+
+.info-section {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 50px;
+    background-color: #F5EBE0;
+}
+
+.info-box{
+    flex: 1;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.left-box img {
+    width: 100%;
+    height: auto;
+}
+
+.right-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.right-box p {
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+#more{
+    background-color: #DBA39A;
+    padding: 4px 4px;
+    border-radius: 20px;
+    text-decoration: none;
+    color: white;
+    font-size: smaller;
+}
+
+.intro-section{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 50px;
+    background-color: #F5EBE0;
+}
+
+.intro-box{
+    flex: 1;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.intro-box img{
+    width: 100%;
+    height: auto;
+}
+
+.intro-teks{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 1.5;
+}
+
+.project-section{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 50px;
+    background-color: #F5EBE0;
+}
+
+.project-section table{
+    margin: auto;
+    text-align: center;
+}
+
+.contact-section{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 50px;
+    background-color: #F5EBE0;
+}
+
+.contact-section table{
+    margin: auto;
+    width: 80%;
+}
+
+.contact-section table tr td{
+    width: 25%;
+    align-items: center;
+    text-align: center;
+}
+
+.contact-section table tr td img{
+    width: 100%;
+    max-width: 70px;
+}
+
+.footer{
+    width: 100%;
+    text-align: center;
+    background-color: black;
+    color: #F5EBE0;
+    font-weight: bold;
+    padding: 10px 0px;
+}

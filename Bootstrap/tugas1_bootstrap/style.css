@@ -1,0 +1,34 @@
+.frame{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero{
+    background-image: url("/gambar/hero.jpg");
+    background-size: cover;
+}
+
+.hero h1, h4{
+    text-align: center;
+}
+
+.about-top{
+    width: 100vw;
+    height: 50vh;
+}
+
+.about-bot{
+    width: 100vw;
+    height: 50vh;
+}
+
+p{
+    font-size: 1.2vw;
+    text-align: justify;
+}
+
+svg{
+    margin-left: 80%;
+}

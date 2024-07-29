@@ -1,0 +1,33 @@
+body{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(95, 99, 104);
+}
+#hero{
+    padding-top: 15%;
+    width: 30vh;
+
+}
+.input-text{
+    border-radius: 25px;
+    width: 50%;
+    text-align: center;
+    padding: 4px 0;
+}
+#search-bar{
+    display: flex;
+    justify-content: center;
+}
+.history{
+    margin-top: 4%;
+    width: 50%;
+}
+.col{
+    text-align: center;
+}
+.history img{
+    filter: invert(100%) sepia(100%) saturate(1000%) hue-rotate(180deg);
+}
+p{
+    font-size: 10pt;
+}
