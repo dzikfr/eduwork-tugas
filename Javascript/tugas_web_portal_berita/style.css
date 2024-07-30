@@ -6,6 +6,7 @@ img{
 .news-item{
     background-color: #E8E8E8;
     border-bottom: 2px solid black;
+    padding-bottom: 20px;
 }
 
 .btn{
@@ -14,4 +15,12 @@ img{
     margin: 0px 0px 20px 20px;
     border-radius: 50px;
     font-size: 1.2vw;
+}
+
+a{
+    text-decoration: none;
+}
+
+a:hover{
+    color: black;
 }
