@@ -1,4 +1,4 @@
-const url = 'https://jsonplaceholder.typicode.com/users';
+const urlData = 'https://jsonplaceholder.typicode.com/users';
 
 function getData(url, callback) {
     fetch(url)
@@ -10,9 +10,11 @@ function getData(url, callback) {
       })
       .then(data => {
         callback(null, data);
+        alert('Pengambilan data berhasil');
       })
       .catch(error => {
         callback(error, null);
+        alert('pastikan anda terkoneksi internet');
       });
 }
 
@@ -34,9 +36,7 @@ function displayData(error, data) {
         row.insertCell(4).textContent = fullAddress;
         row.insertCell(5).textContent = fullCompany;
       });
-
-      alert('Pengambilan data berhasil');
     }
   }
 
-  getData(url, displayData);
+  getData(urlData, displayData);
