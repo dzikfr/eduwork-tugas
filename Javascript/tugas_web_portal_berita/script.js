@@ -71,7 +71,7 @@ getData();
 
 //scrollup button
 function scrollButton() {
-  var topButton = document.getElementById("topScrollButton");
+  const topButton = document.getElementById("topScrollButton");
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
       topButton.style.display = "block";
   } else {

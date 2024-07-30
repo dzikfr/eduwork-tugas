@@ -1,10 +1,13 @@
+body{
+    background-color: #e0d1d1;
+}
+
 img{
     max-width: 70%;
     padding: 40px 0px 40px 0px;
 }
 
 .news-item{
-    background-color: #E8E8E8;
     border-bottom: 2px solid black;
     padding-bottom: 20px;
 }
