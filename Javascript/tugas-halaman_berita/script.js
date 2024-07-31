@@ -88,7 +88,7 @@ function displayNews(articles) {
 
 getData();
 
-//search fitur
+//search filter
 let allArticles = [];
 function searchNews() {
   const searchTerm = document.getElementById('search-bar').value.toLowerCase();
@@ -99,7 +99,6 @@ function searchNews() {
 }
 
 document.getElementById('search-bar').addEventListener('input', searchNews);
-
 
 //scrollup
 function scrollUpButton() {
