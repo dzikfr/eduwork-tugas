@@ -1,0 +1,24 @@
+#topScrollButton{
+    width: 10%;
+    height: 10%;
+    margin: 0px 0px 20px 20px;
+    border-radius: 50px;
+    font-size: 1.2vw;
+}
+
+#main{
+    padding-top: 2.5%;
+}
+
+a{
+    text-decoration: none;
+}
+
+.btn{
+    transition: 1s;
+}
+
+.btn:hover{
+    background-color: black;
+    color: blue;
+}

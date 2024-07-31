@@ -1,12 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal Berita</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 10px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .search-bar {
+      margin-bottom: 20px;
+      padding: 10px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .news-item {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 20px;
+    }
+    .news-item img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 5px;
+    }
+    .news-item h2 {
+      margin: 10px 0;
+    }
+    .news-item p {
+      margin: 5px 0;
+      color: #555;
+    }
+    .news-item a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+    .news-item a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
-    
-    <script src="script.js"></script>
+  <div class="container">
+    <input type="text" id="search-bar" class="search-bar" placeholder="Cari berita..." onkeyup="searchNews()">
+    <div id="news-container">
+      <!-- Berita akan ditambahkan di sini -->
+    </div>
+  </div>
+
+  <script>
+    let allArticles = []; // Variabel untuk menyimpan semua artikel
+
+    // URL API untuk mendapatkan data berita
+    const apiURL = 'https://newsapi.org/v2/everything?q=tesla&from=2024-06-30&sortBy=publishedAt&apiKey=542d8b36e56f4044a035d48626c5c242'; // Ganti dengan URL API sebenarnya
+
+    // Fungsi untuk mengambil data berita dari API
+    function fetchNews() {
+      fetch(apiURL)
+        .then(response => response.json())
+        .then(data => {
+          if (data.status === 'ok') {
+            allArticles = data.articles;
+            displayNews(allArticles);
+          } else {
+            console.error('Error fetching news:', data);
+          }
+        })
+        .catch(error => {
+          console.error('Error fetching news:', error);
+        });
+    }
+
+    // Fungsi untuk menampilkan berita di halaman
+    function displayNews(articles) {
+      const newsContainer = document.getElementById('news-container');
+      newsContainer.innerHTML = ''; // Bersihkan konten lama
+
+      articles.forEach(article => {
+        // Membuat elemen untuk setiap berita
+        const newsItem = document.createElement('div');
+        newsItem.className = 'news-item';
+
+        // Menambahkan gambar jika ada
+        if (article.urlToImage) {
+          const newsImage = document.createElement('img');
+          newsImage.src = article.urlToImage;
+          newsImage.alt = article.title;
+          newsItem.appendChild(newsImage);
+        }
+
+        // Menambahkan judul berita
+        const newsTitle = document.createElement('h2');
+        newsTitle.textContent = article.title;
+        newsItem.appendChild(newsTitle);
+
+        // Menambahkan informasi lokasi (source) dan penulis
+        const newsInfo = document.createElement('p');
+        newsInfo.textContent = `Sumber: ${article.source.name}, Penulis: ${article.author || 'N/A'}`;
+        newsItem.appendChild(newsInfo);
+
+        // Menambahkan deskripsi berita
+        const newsDescription = document.createElement('p');
+        newsDescription.textContent = article.description || 'Tidak ada deskripsi.';
+        newsItem.appendChild(newsDescription);
+
+        // Menambahkan link untuk membaca berita lengkap
+        const newsLink = document.createElement('a');
+        newsLink.href = article.url;
+        newsLink.target = '_blank';
+        newsLink.textContent = 'Baca Selengkapnya';
+        newsItem.appendChild(newsLink);
+
+        // Menambahkan elemen ke dalam kontainer berita
+        newsContainer.appendChild(newsItem);
+      });
+    }
+
+    // Fungsi untuk mencari berita berdasarkan judul
+    function searchNews() {
+      const searchTerm = document.getElementById('search-bar').value.toLowerCase();
+      const filteredArticles = allArticles.filter(article => 
+        article.title.toLowerCase().includes(searchTerm)
+      );
+      displayNews(filteredArticles);
+    }
+
+    // Memanggil fungsi fetchNews untuk mengambil dan menampilkan data berita
+    fetchNews();
+  </script>
 </body>
 </html>
