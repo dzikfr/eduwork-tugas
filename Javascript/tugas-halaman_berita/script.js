@@ -1,3 +1,5 @@
+let allArticles = [];
+
 //ambil data
 const urlData = 'https://newsapi.org/v2/everything?q=tesla&from=2024-06-30&sortBy=publishedAt&apiKey=542d8b36e56f4044a035d48626c5c242';
 function getData() {
@@ -13,7 +15,7 @@ function getData() {
       }
     })
     .catch(error => {
-      console.error('Error fetching data:', error);
+      console.error('Error', error);
       alert('Pastikan terkoneksi dengan internet');
     });
 }
@@ -30,7 +32,7 @@ function displayNews(articles) {
 
     //card
     const card = document.createElement('div');
-    card.classList.add('card', 'h-100');
+    card.classList.add('card', 'h-100', 'd-flex', 'flex-column');
     newsItem.appendChild(card);
 
     //image card
@@ -48,7 +50,7 @@ function displayNews(articles) {
 
     //card body
     const cardBody = document.createElement('div');
-    cardBody.classList.add('card-body');
+    cardBody.classList.add('card-body', 'd-flex', 'flex-column');
     card.appendChild(cardBody);
 
     //judul
@@ -78,18 +80,19 @@ function displayNews(articles) {
     //seemore
     const seeMore = document.createElement('a');
     seeMore.href = article.url;
-    seeMore.classList.add('btn', 'btn-primary');
+    seeMore.classList.add('btn', 'btn-primary', 'mt-auto');
     seeMore.textContent = 'Lihat Selengkapnya';
+    seeMore.target = '_blank';
     cardBody.appendChild(seeMore);
 
     newsContainer.appendChild(newsItem);
   });
 }
 
-getData();
+window.onload = getData;
 
 //search filter
-let allArticles = [];
+
 function searchNews() {
   const searchTerm = document.getElementById('search-bar').value.toLowerCase();
   const filteredArticles = allArticles.filter(article =>
